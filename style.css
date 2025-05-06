@@ -1,64 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #e0f5e9 0%, #b6f2c7 100%);
+  background: #f4f8f4;
   color: #222;
-  min-height: 100vh;
 }
 
 header {
   background: #006d3c;
   color: #fff;
-  padding: 2rem 0 1.2rem 0;
+  padding: 1.5rem 0 1rem 0;
   text-align: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
 header h1 {
   margin: 0 0 0.5rem 0;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   letter-spacing: 2px;
-  font-weight: 700;
 }
 
 nav {
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-nav a:hover, nav a.active {
-  background: #b6f2c7;
-  color: #006d3c;
+nav a:hover {
+  color: #b6f2c7;
 }
 
 main {
   max-width: 700px;
-  margin: 2.5rem auto;
+  margin: 2rem auto;
   background: #fff;
-  padding: 2.5rem 2rem;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
 h2 {
   color: #006d3c;
   margin-top: 0;
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 ul {
@@ -68,87 +55,10 @@ ul {
 
 footer {
   text-align: center;
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   background: #e0f5e9;
   color: #006d3c;
   margin-top: 2rem;
   font-size: 1rem;
   border-top: 1px solid #b6f2c7;
-  letter-spacing: 1px;
-}
-
-/* Accordion Styles */
-.accordion {
-  margin-bottom: 14px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,109,60,0.07);
-  background: #f4f8f4;
-}
-
-.accordion-header {
-  background: #009e60;
-  color: #fff;
-  cursor: pointer;
-  padding: 1.1rem 1.5rem;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: background 0.2s;
-  position: relative;
-  border-bottom: 1px solid #b6f2c7;
-}
-
-.accordion-header::after {
-  content: '+';
-  position: absolute;
-  right: 1.5rem;
-  font-size: 1.3rem;
-  transition: transform 0.2s;
-}
-
-.accordion-header.active {
-  background: #006d3c;
-}
-
-.accordion-header.active::after {
-  content: '-';
-}
-
-.accordion-content {
-  background: #f9f9f9;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s;
-  padding: 0 1.5rem;
-}
-
-.accordion-content.open {
-  padding: 1.2rem 1.5rem;
-  max-height: 500px;
-}
-
-.event-details h3 {
-  color: #009e60;
-  margin-top: 0;
-}
-
-.event-details p, .event-details ul {
-  margin: 0.5rem 0;
-}
-
-@media (max-width: 800px) {
-  main {
-    max-width: 98vw;
-    padding: 1.2rem 0.5rem;
-  }
-  header h1 {
-    font-size: 2rem;
-  }
-  nav {
-    gap: 1rem;
-  }
 }
