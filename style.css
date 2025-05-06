@@ -1,63 +1,154 @@
-/* Add these to your existing style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #e0f5e9 0%, #b6f2c7 100%);
+  color: #222;
+  min-height: 100vh;
+}
+
+header {
+  background: #006d3c;
+  color: #fff;
+  padding: 2rem 0 1.2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+nav {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  background: #b6f2c7;
+  color: #006d3c;
+}
+
+main {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+h2 {
+  color: #006d3c;
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.2rem 0;
+  background: #e0f5e9;
+  color: #006d3c;
+  margin-top: 2rem;
+  font-size: 1rem;
+  border-top: 1px solid #b6f2c7;
+  letter-spacing: 1px;
+}
+
+/* Accordion Styles */
 .accordion {
-    width: 100%;
-    margin-bottom: 10px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,109,60,0.07);
+  background: #f4f8f4;
 }
 
 .accordion-header {
-    background-color: #006d3c;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    border-radius: 5px;
+  background: #009e60;
+  color: #fff;
+  cursor: pointer;
+  padding: 1.1rem 1.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  position: relative;
+  border-bottom: 1px solid #b6f2c7;
 }
 
-.accordion-header:hover {
-    background-color: #005731;
+.accordion-header::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.3rem;
+  transition: transform 0.2s;
+}
+
+.accordion-header.active {
+  background: #006d3c;
+}
+
+.accordion-header.active::after {
+  content: '-';
 }
 
 .accordion-content {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    border-radius: 0 0 5px 5px;
+  background: #f9f9f9;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  padding: 0 1.5rem;
 }
 
-.accordion-header:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-
-.event-details {
-    padding: 15px 0;
+.accordion-content.open {
+  padding: 1.2rem 1.5rem;
+  max-height: 500px;
 }
 
 .event-details h3 {
-    color: #006d3c;
-    margin-top: 0;
+  color: #009e60;
+  margin-top: 0;
 }
 
-.event-details p {
-    margin: 5px 0;
+.event-details p, .event-details ul {
+  margin: 0.5rem 0;
 }
 
-.event-image {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-    border-radius: 5px;
+@media (max-width: 800px) {
+  main {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  nav {
+    gap: 1rem;
+  }
 }
