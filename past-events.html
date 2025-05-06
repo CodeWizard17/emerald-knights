@@ -1,100 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Past Events | Emerald Knights</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past Events | Emerald Knights</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Emerald Knights Chess Club</h1>
-        <nav>
-            <a href="index.html">About Us</a>
-            <a href="future-events.html">Future Events</a>
-            <a href="past-events.html">Past Events</a>
-            <a href="chess-literacy.html">Chess Literacy</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Past Events</h2>
-            
-            <!-- March 1, 2025 Event -->
-            <div class="accordion">
-                <button class="accordion-header">March 1, 2025 - Spring Tournament</button>
-                <div class="accordion-content">
-                    <div class="event-details">
-                        <h3>Spring Chess Tournament 2025</h3>
-                        <p><strong>Location:</strong> Community Center</p>
-                        <p><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
-                        <p><strong>Winners:</strong></p>
-                        <ul>
-                            <li>1st Place: Sarah Chen</li>
-                            <li>2nd Place: Michael Rodriguez</li>
-                            <li>3rd Place: David Kim</li>
-                        </ul>
-                        <p><strong>Participants:</strong> 32 players</p>
-                        <p><strong>Highlights:</strong> Exciting matches with several surprising upsets. 
-                        The tournament featured players from all skill levels and included a special 
-                        junior division for players under 15.</p>
-                    </div>
-                </div>
-            </div>
+  <header>
+    <h1>Emerald Knights Chess Club</h1>
+    <nav>
+      <a href="index.html">About Us</a>
+      <a href="future-events.html">Future Events</a>
+      <a href="past-events.html" class="active">Past Events</a>
+      <a href="chess-literacy.html">Chess Literacy</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Past Events</h2>
 
-            <!-- February 10, 2025 Event -->
-            <div class="accordion">
-                <button class="accordion-header">February 10, 2025 - Winter Blitz Tournament</button>
-                <div class="accordion-content">
-                    <div class="event-details">
-                        <h3>Winter Blitz Tournament</h3>
-                        <p><strong>Location:</strong> Library Meeting Room</p>
-                        <p><strong>Time:</strong> 2:00 PM - 6:00 PM</p>
-                        <p><strong>Winner:</strong> Alex Johnson</p>
-                        <p><strong>Format:</strong> 5-minute blitz games</p>
-                        <p><strong>Participants:</strong> 16 players</p>
-                    </div>
-                </div>
-            </div>
+      <div class="accordion">
+        <button class="accordion-header">3/1/2025 - Spring Tournament</button>
+        <div class="accordion-content">
+          <div class="event-details">
+            <h3>Spring Chess Tournament 2025</h3>
+            <p><strong>Location:</strong> Community Center</p>
+            <p><strong>Winner:</strong> Sarah Chen</p>
+            <p><strong>Participants:</strong> 32 players</p>
+            <p><strong>Highlights:</strong> Junior division, several upsets, and a great turnout!</p>
+          </div>
+        </div>
+      </div>
 
-            <!-- December 15, 2024 Event -->
-            <div class="accordion">
-                <button class="accordion-header">December 15, 2024 - Holiday Chess Social</button>
-                <div class="accordion-content">
-                    <div class="event-details">
-                        <h3>Holiday Chess Social</h3>
-                        <p><strong>Location:</strong> Community Center</p>
-                        <p><strong>Time:</strong> 3:00 PM - 7:00 PM</p>
-                        <p><strong>Activities:</strong></p>
-                        <ul>
-                            <li>Casual games</li>
-                            <li>Chess puzzle solving contest</li>
-                            <li>Holiday refreshments</li>
-                            <li>Prize drawing</li>
-                        </ul>
-                        <p><strong>Attendance:</strong> 45 members and guests</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        &copy; 2025 Emerald Knights Chess Club
-    </footer>
+      <div class="accordion">
+        <button class="accordion-header">2/10/2025 - Winter Blitz Tournament</button>
+        <div class="accordion-content">
+          <div class="event-details">
+            <h3>Winter Blitz Tournament</h3>
+            <p><strong>Winner:</strong> Alex Johnson</p>
+            <p>Fast-paced 5-minute games with 16 participants.</p>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('active');
-                const content = button.nextElementSibling;
-                
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            });
-        });
-    </script>
+      <div class="accordion">
+        <button class="accordion-header">12/15/2024 - Holiday Chess Social</button>
+        <div class="accordion-content">
+          <div class="event-details">
+            <h3>Holiday Chess Social</h3>
+            <p>Casual games, puzzles, and holiday treats for 45 members and guests.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Emerald Knights Chess Club
+  </footer>
+  <script>
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
