@@ -12,62 +12,28 @@
     <nav>
       <a href="index.html">About Us</a>
       <a href="future-events.html">Future Events</a>
-      <a href="past-events.html" class="active">Past Events</a>
+      <a href="past-events.html">Past Events</a>
       <a href="chess-literacy.html">Chess Literacy</a>
     </nav>
   </header>
   <main>
     <section>
       <h2>Past Events</h2>
-
-      <div class="accordion">
-        <button class="accordion-header">3/1/2025 - Spring Tournament</button>
-        <div class="accordion-content">
-          <div class="event-details">
-            <h3>Spring Chess Tournament 2025</h3>
-            <p><strong>Location:</strong> Community Center</p>
-            <p><strong>Winner:</strong> Sarah Chen</p>
-            <p><strong>Participants:</strong> 32 players</p>
-            <p><strong>Highlights:</strong> Junior division, several upsets, and a great turnout!</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-header">2/10/2025 - Winter Blitz Tournament</button>
-        <div class="accordion-content">
-          <div class="event-details">
-            <h3>Winter Blitz Tournament</h3>
-            <p><strong>Winner:</strong> Alex Johnson</p>
-            <p>Fast-paced 5-minute games with 16 participants.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <button class="accordion-header">12/15/2024 - Holiday Chess Social</button>
-        <div class="accordion-content">
-          <div class="event-details">
-            <h3>Holiday Chess Social</h3>
-            <p>Casual games, puzzles, and holiday treats for 45 members and guests.</p>
-          </div>
-        </div>
-      </div>
-
+      <ul>
+        <li>
+          <strong>Winter Blitz Tournament</strong> – February 10, 2025<br>
+          Winner: Alex Johnson
+        </li>
+        <li>
+          <strong>Holiday Chess Social</strong> – December 15, 2024<br>
+          Fun games and prizes!
+        </li>
+        <!-- Add more past events as needed -->
+      </ul>
     </section>
   </main>
   <footer>
     &copy; 2025 Emerald Knights Chess Club
   </footer>
-  <script>
-    // Accordion functionality
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', function() {
-        this.classList.toggle('active');
-        const content = this.nextElementSibling;
-        content.classList.toggle('open');
-      });
-    });
-  </script>
 </body>
 </html>
