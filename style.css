@@ -1,64 +1,63 @@
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  background: #f4f8f4;
-  color: #222;
+/* Add these to your existing style.css */
+.accordion {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-header {
-  background: #006d3c;
-  color: #fff;
-  padding: 1.5rem 0 1rem 0;
-  text-align: center;
+.accordion-header {
+    background-color: #006d3c;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 5px;
 }
 
-header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2.2rem;
-  letter-spacing: 2px;
+.accordion-header:hover {
+    background-color: #005731;
 }
 
-nav {
-  margin-bottom: 1rem;
+.accordion-content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 0 0 5px 5px;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1.2rem;
-  font-weight: 500;
-  transition: color 0.2s;
+.accordion-header:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
 }
 
-nav a:hover {
-  color: #b6f2c7;
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-main {
-  max-width: 700px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+.event-details {
+    padding: 15px 0;
 }
 
-h2 {
-  color: #006d3c;
-  margin-top: 0;
+.event-details h3 {
+    color: #006d3c;
+    margin-top: 0;
 }
 
-ul {
-  list-style: disc inside;
-  padding-left: 1rem;
+.event-details p {
+    margin: 5px 0;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  background: #e0f5e9;
-  color: #006d3c;
-  margin-top: 2rem;
-  font-size: 1rem;
-  border-top: 1px solid #b6f2c7;
+.event-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
 }
