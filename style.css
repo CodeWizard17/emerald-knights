@@ -135,3 +135,29 @@ footer {
     padding: 0.3rem 0.7rem;
   }
 }
+
+/* Event Photos Section */
+.event-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+}
+
+.event-photos img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,109,60,0.10);
+  object-fit: cover;
+  background: #e0f5e9;
+  transition: transform 0.2s;
+}
+
+.event-photos img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(0,109,60,0.18);
+}
