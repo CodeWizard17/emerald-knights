@@ -224,20 +224,20 @@ footer a {
   box-shadow: 0 4px 16px rgba(0,109,60,0.18);
 }
 
-/* ---------- New Founder Section Styles ---------- */
+/* ---------- Founder Section Styles ---------- */
 .founder-container {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start; /* top-align text with image */
+  gap: 16px;
   flex-wrap: wrap; /* stack on smaller screens */
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .founder-photo {
-  max-width: 250px;
+  max-width: 160px;   /* smaller image size */
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,109,60,0.10);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,109,60,0.1);
 }
