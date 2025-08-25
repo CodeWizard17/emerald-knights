@@ -223,3 +223,21 @@ footer a {
   transform: scale(1.04);
   box-shadow: 0 4px 16px rgba(0,109,60,0.18);
 }
+
+/* ---------- New Founder Section Styles ---------- */
+.founder-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* stack on smaller screens */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.founder-photo {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,109,60,0.10);
+}
