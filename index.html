@@ -3,68 +3,602 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us | Emerald Knights</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Emerald Knights Chess Club | Master Your Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --gold: #f59e0b;
+      --gold-light: #fbbf24;
+      --gold-dark: #d97706;
+      --dark: #1f2937;
+      --darker: #111827;
+      --light: #f9fafb;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, var(--primary-dark) 100%);
+      color: white;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Animated background particles */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { width: 4px; height: 4px; top: 20%; left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { width: 8px; height: 8px; top: 60%; left: 20%; animation-delay: 1s; }
+    .particle:nth-child(3) { width: 6px; height: 6px; top: 30%; left: 70%; animation-delay: 2s; }
+    .particle:nth-child(4) { width: 10px; height: 10px; top: 80%; left: 80%; animation-delay: 3s; }
+    .particle:nth-child(5) { width: 5px; height: 5px; top: 10%; left: 60%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    /* Header with glassmorphism */
+    header {
+      backdrop-filter: blur(10px);
+      background: rgba(30, 64, 175, 0.1);
+      border-bottom: 1px solid rgba(30, 64, 175, 0.2);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 8px 32px rgba(30, 64, 175, 0.3);
+      animation: pulse 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { box-shadow: 0 8px 32px rgba(30, 64, 175, 0.3); }
+      to { box-shadow: 0 12px 40px rgba(30, 64, 175, 0.5); }
+    }
+
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(45deg, var(--primary-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      position: relative;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    nav a:hover::before {
+      left: 100%;
+    }
+
+    nav a:hover {
+      background: rgba(30, 64, 175, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+    }
+
+    /* Hero section with dramatic styling */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 2rem;
+      z-index: 10;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(45deg, var(--primary-light), var(--gold), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .cta-btn {
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-primary {
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      color: white;
+      box-shadow: 0 8px 32px rgba(30, 64, 175, 0.4);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(30, 64, 175, 0.6);
+    }
+
+    .cta-secondary:hover {
+      background: var(--gold);
+      color: var(--darker);
+    }
+
+    /* Chess board background effect */
+    .chess-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 400px;
+      height: 400px;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .chess-square {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      background: var(--primary);
+    }
+
+    /* Content sections */
+    .content-section {
+      max-width: 1200px;
+      margin: 6rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--primary), var(--gold), var(--primary-light));
+      border-radius: 22px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .section-card:hover::before {
+      opacity: 0.8;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(30, 64, 175, 0.3);
+    }
+
+    .section-card h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(45deg, var(--primary-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Founder section with enhanced styling */
+    .founder-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .founder-photo {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(30, 64, 175, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .founder-photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 80px rgba(30, 64, 175, 0.5);
+    }
+
+    /* Stats section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(30, 64, 175, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(30, 64, 175, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      background: rgba(30, 64, 175, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 0;
+      text-align: center;
+      margin-top: 6rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--gold-light);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .founder-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <!-- Animated background -->
+  <div class="bg-animation">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <header>
-    <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
-    <h1>Emerald Knights Chess Club</h1>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-    <nav>
-      <a href="index.html">About Us</a>
-      <a href="future-events.html">Future Events</a>
-      <a href="past-events.html">Past Events</a>
-      <a href="chess-literacy.html">Chess Literacy</a>
-    </nav>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo">♔</div>
+        <h1 class="site-title">Emerald Knights</h1>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#mission">Mission</a>
+        <a href="#founder">Founder</a>
+        <a href="#events">Events</a>
+      </nav>
+    </div>
   </header>
+
   <main>
     <section class="hero">
-      <h2>Welcome to Emerald Knights Chess</h2>
-      <p>Building community, strategy, and lifelong skills—one move at a time.</p>
-    </section>
-
-    <section>
-      <h2>About Us</h2>
-      <p>
-        We are a student-led non-profit dedicated to promoting the game of chess, fostering strategic thinking, and building a vibrant community of chess enthusiasts.
-      </p>
-    </section>
-
-    <section>
-      <h2>Our Founding</h2>
-      <p>
-        The Emerald Knights Chess Club was founded on October 10, 2024, by Advay Bansal with a mission to empower youth through chess.
-      </p>
-    </section>
-
-    <section>
-      <h2>About the Founder</h2>
-      <div class="founder-container">
-        <img src="/images/IMG_0865.jpg" alt="Advay Bansal" class="founder-photo">
-        <p>
-          Advay Bansal, the founder of Emerald Knights, is a FIDE Master with a peak Elo of
-          2393 and a former World Rank #4 in his international age category. With
-          multiple victories at state and national tournaments, he has established
-          himself as one of the strongest young players in the country. Advay’s vision
-          and competitive experience continue to drive our mission forward, inspiring
-          players to challenge themselves and achieve success at every stage of their
-          chess journey.
-        </p>
+      <div class="chess-bg">
+        <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 0;">
+          <!-- Chess board pattern -->
+          <div class="chess-square" style="background: transparent;"></div>
+          <div class="chess-square"></div>
+          <div class="chess-square" style="background: transparent;"></div>
+          <div class="chess-square"></div>
+          <div class="chess-square" style="background: transparent;"></div>
+          <div class="chess-square"></div>
+          <div class="chess-square" style="background: transparent;"></div>
+          <div class="chess-square"></div>
+        </div>
+      </div>
+      
+      <div class="hero-content">
+        <h1>Master Your Game</h1>
+        <p>Building community, strategy, and lifelong skills—one move at a time.</p>
+        <div class="hero-cta">
+          <a href="#about" class="cta-btn cta-primary">Discover Our Club</a>
+          <a href="mailto:contact@emerald-knights.org" class="cta-btn cta-secondary">Join Today</a>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Our Mission</h2>
-      <p>
-        To provide a supportive and engaging environment for players of all levels to learn, grow, and compete while promoting academic excellence, patience, and sportsmanship.
-      </p>
-    </section>
+    <div class="content-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">2393</span>
+          <span class="stat-label">Peak Elo Rating</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">#4</span>
+          <span class="stat-label">World Rank</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2024</span>
+          <span class="stat-label">Founded</span>
+        </div>
+      </div>
+
+      <section id="about" class="section-card">
+        <h2>About Emerald Knights</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.9;">
+          We are a student-led non-profit dedicated to promoting the game of chess, fostering strategic thinking, and building a vibrant community of chess enthusiasts. Our club provides a supportive environment where players of all skill levels can grow, compete, and develop lasting friendships through the royal game.
+        </p>
+      </section>
+
+      <section id="mission" class="section-card">
+        <h2>Our Mission</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.9;">
+          To provide a supportive and engaging environment for players of all levels to learn, grow, and compete while promoting academic excellence, patience, and sportsmanship. We believe chess is more than a game—it's a tool for developing critical thinking, emotional intelligence, and strategic planning skills that benefit every aspect of life.
+        </p>
+      </section>
+
+      <section id="founder" class="section-card">
+        <h2>Meet Our Founder</h2>
+        <div class="founder-container">
+          <img src="/images/IMG_0865.jpg" alt="Advay Bansal" class="founder-photo">
+          <div>
+            <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 1rem;">Advay Bansal</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9;">
+              Advay Bansal, the founder of Emerald Knights, is a FIDE Master with a peak Elo of 2393 and a former World Rank #4 in his international age category. With multiple victories at state and national tournaments, he has established himself as one of the strongest young players in the country. 
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9; margin-top: 1rem;">
+              Advay's vision and competitive experience continue to drive our mission forward, inspiring players to challenge themselves and achieve success at every stage of their chess journey.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="section-card">
+        <h2>Recent Achievements</h2>
+        <div style="padding: 2rem; background: rgba(30, 64, 175, 0.1); border-radius: 15px; margin-top: 2rem;">
+          <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem;">EHS Inaugural Chess Tournament (USCF Rated) — March 1, 2024</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px;">
+              <strong style="color: var(--gold-light);">1200+ Section</strong><br>
+              <span style="color: var(--primary-light);">Rishi Krishan</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px;">
+              <strong style="color: var(--gold-light);">800-1200 Section</strong><br>
+              <span style="color: var(--primary-light);">Aryaman Majumder</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px;">
+              <strong style="color: var(--gold-light);">400-800 Section</strong><br>
+              <span style="color: var(--primary-light);">Vikram Snyder</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
+
   <footer>
-    &copy; 2025 Emerald Knights Chess Club | <a href="mailto:contact@emerald-knights.org">Contact Us</a>
+    <p>&copy; 2025 Emerald Knights Chess Club | <a href="mailto:contact@emerald-knights.org">Contact Us</a></p>
+    <p style="margin-top: 1rem; opacity: 0.7;">Empowering minds through the art of chess</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(30, 64, 175, 0.2)';
+        header.style.backdropFilter = 'blur(15px)';
+      } else {
+        header.style.background = 'rgba(30, 64, 175, 0.1)';
+        header.style.backdropFilter = 'blur(10px)';
+      }
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
-
