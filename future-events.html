@@ -8,33 +8,52 @@
 </head>
 <body>
   <header>
-    <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
-    <h1>Emerald Knights Chess Club</h1>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-    <nav>
-      <a href="index.html">About Us</a>
-      <a href="future-events.html">Future Events</a>
-      <a href="past-events.html">Past Events</a>
-      <a href="chess-literacy.html">Chess Literacy</a>
-    </nav>
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
+        <div class="site-title">Emerald Knights</div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="nav">
+        <a href="index.html">About Us</a>
+        <a href="future-events.html" class="active">Future Events</a>
+        <a href="past-events.html">Past Events</a>
+        <a href="chess-literacy.html">Chess Literacy</a>
+      </nav>
+    </div>
   </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Upcoming Events</h1>
+      <p>Join us for exciting tournaments and chess activities</p>
+    </div>
+  </section>
+
   <main>
     <section>
-      <h2>Upcoming Events</h2>
+      <h2 class="section-title">Future Events</h2>
       <ul>
         <li>
-          <strong>Fall Open Tournament</strong> – August 2025<br>
-          Location: EHS Student Union<br>
-          Time: 10:00 AM – 2:00 PM<br>
+          <strong>Fall Open Tournament</strong>
+          <br>
+          <span style="color: #2d5a4d;">📅 August 2025</span>
+          <br>
+          <span style="color: #2d5a4d;">📍 Location: EHS Student Union</span>
+          <br>
+          <span style="color: #2d5a4d;">🕐 Time: 10:00 AM – 2:00 PM</span>
+          <br>
           <a class="btn" href="mailto:contact@emerald-knights.org?subject=RSVP%20Summer%20Tournament">RSVP Now</a>
         </li>
-        <!-- Add more events here if needed -->
+        <!-- Add more events here as needed -->
       </ul>
     </section>
   </main>
+
   <footer>
     &copy; 2025 Emerald Knights Chess Club | <a href="mailto:contact@emerald-knights.org">Contact Us</a>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
