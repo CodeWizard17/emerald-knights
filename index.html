@@ -3,72 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us | Emerald Knights</title>
+  <title>Emerald Knights Chess Club</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
-    <h1>Emerald Knights Chess Club</h1>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-    <nav>
-      <a href="index.html">About Us</a>
-      <a href="future-events.html">Future Events</a>
-      <a href="past-events.html">Past Events</a>
-      <a href="chess-literacy.html">Chess Literacy</a>
-    </nav>
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
+        <div class="site-title">Emerald Knights</div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="nav">
+        <a href="index.html" class="active">About Us</a>
+        <a href="future-events.html">Future Events</a>
+        <a href="past-events.html">Past Events</a>
+        <a href="chess-literacy.html">Chess Literacy</a>
+      </nav>
+    </div>
   </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Emerald Knights Chess Club</h1>
+      <p>Building community, strategy, and lifelong skills one move at a time</p>
+      <a href="future-events.html" class="cta-button">Join Our Next Event</a>
+    </div>
+  </section>
+
   <main>
-    <section class="hero">
-      <h2>Welcome to Emerald Knights Chess</h2>
-      <p>Building community, strategy, and lifelong skills one move at a time.</p>
-    </section>
-
     <section>
-      <h2>About Us</h2>
-      <p>
-        We are a student-led non-profit dedicated to promoting the game of chess, fostering strategic thinking, and building a vibrant community of chess enthusiasts.
-      </p>
-    </section>
-
-    <section>
-      <h2>Our Founding</h2>
-      <p>
-        The Emerald Knights Chess Club was founded on October 10, 2024, by Advay Bansal with a mission to empower youth through chess.
-      </p>
-    </section>
-
-    <section>
-      <h2>About the Founder</h2>
-      <div class="founder-container">
-        <img src="/images/IMG_0865.jpg" alt="Advay Bansal" class="founder-photo">
+      <h2 class="section-title">About Us</h2>
+      <div class="content-card">
         <p>
-          Advay Bansal, the founder of Emerald Knights, is a FIDE Master with a peak Elo of
-          2393 and a former World Rank #4 in his international age category. With
-          multiple victories at state and national tournaments, he has established
-          himself as one of the strongest young players in the country. Advay's vision
-          and competitive experience continue to drive our mission forward, inspiring
-          players to challenge themselves and achieve success at every stage of their
-          chess journey.
+          We are a student-led non-profit dedicated to promoting the game of chess, fostering strategic thinking, and building a vibrant community of chess enthusiasts. Founded on October 10, 2024, the Emerald Knights Chess Club empowers youth through chess education, competitive play, and community engagement.
         </p>
       </div>
     </section>
 
     <section>
-      <h2>Our Mission</h2>
-      <p>
-        To provide a supportive and engaging environment for players of all levels to learn, grow, and compete while promoting academic excellence, patience, and sportsmanship.
-      </p>
+      <h2 class="section-title">About the Founder</h2>
+      <div class="founder-section">
+        <img src="/images/IMG_0865.jpg" alt="Advay Bansal" class="founder-photo">
+        <div class="founder-info">
+          <h3>Advay Bansal</h3>
+          <p>
+            Advay Bansal is a FIDE Master with a peak Elo of 2393 and a former World Rank #4 in his international age category. With multiple victories at state and national tournaments, he has established himself as one of the strongest young players in the country. Advay's vision and competitive experience continue to drive our mission forward, inspiring players to challenge themselves and achieve success at every stage of their chess journey.
+          </p>
+          <div class="achievements">
+            <span class="achievement-badge">FIDE Master</span>
+            <span class="achievement-badge">Peak Elo: 2393</span>
+            <span class="achievement-badge">World Rank #4</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Our Mission</h2>
+      <div class="content-card">
+        <p>
+          To provide a supportive and engaging environment for players of all levels to learn, grow, and compete while promoting academic excellence, patience, and sportsmanship. We believe chess is more than a game—it's a tool for developing critical thinking, resilience, and strategic planning skills that last a lifetime.
+        </p>
+      </div>
     </section>
   </main>
+
   <footer>
     &copy; 2025 Emerald Knights Chess Club | <a href="mailto:contact@emerald-knights.org">Contact Us</a>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
