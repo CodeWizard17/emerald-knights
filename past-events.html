@@ -8,27 +8,42 @@
 </head>
 <body>
   <header>
-    <img src="images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
-    <h1>Emerald Knights Chess Club</h1>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-    <nav>
-      <a href="index.html">About Us</a>
-      <a href="future-events.html">Future Events</a>
-      <a href="past-events.html">Past Events</a>
-      <a href="chess-literacy.html">Chess Literacy</a>
-    </nav>
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
+        <div class="site-title">Emerald Knights</div>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="nav">
+        <a href="index.html">About Us</a>
+        <a href="future-events.html">Future Events</a>
+        <a href="past-events.html" class="active">Past Events</a>
+        <a href="chess-literacy.html">Chess Literacy</a>
+      </nav>
+    </div>
   </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Past Events</h1>
+      <p>Celebrating our tournament history and champions</p>
+    </div>
+  </section>
+
   <main>
     <section>
-      <h2>Past Events</h2>
+      <h2 class="section-title">Past Events</h2>
       <ul>
         <li>
-          <strong>EHS Inaugural Chess Tournament (USCF Rated)</strong> – March 1, 2025<br>
-          <strong>Section Winners:</strong>
+          <strong>EHS Inaugural Chess Tournament (USCF Rated)</strong>
+          <br>
+          <span style="color: #2d5a4d;">📅 March 1, 2025</span>
+          <br><br>
+          <strong style="color: #10b981; font-size: 1.1rem;">Section Winners:</strong>
           <ul>
-            <li>1200+ Section: Rishi Krishan</li>
-            <li>800-1200 Section: Aryaman Majumder</li>
-            <li>400-800 Section: Vikram Snyder</li>
+            <li><strong>1200+ Section:</strong> Rishi Krishan</li>
+            <li><strong>800-1200 Section:</strong> Aryaman Majumder</li>
+            <li><strong>400-800 Section:</strong> Vikram Snyder</li>
           </ul>
           <div class="event-photos">
             <img src="images/PXL_20250301_203352661.MP.jpg" alt="Tournament Photo 1">
@@ -44,6 +59,7 @@
   <footer>
     &copy; 2025 Emerald Knights Chess Club | <a href="mailto:contact@emerald-knights.org">Contact Us</a>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
