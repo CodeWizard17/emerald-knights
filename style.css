@@ -104,25 +104,13 @@ nav a.active {
 /* Hero Section */
 .hero {
   margin-top: 80px;
-  min-height: 85vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #e8f5e9 0%, #d1f4e0 50%, #e8f5e9 100%);
-}
-
-.hero::before {
-  content: '♔♕♖♗♘♙';
-  position: absolute;
-  font-size: 20rem;
-  color: rgba(16, 185, 129, 0.04);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  letter-spacing: 2rem;
-  z-index: 0;
 }
 
 .hero-content {
