@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
+  const eventsToggle = document.querySelector('.nav-dropdown > a');
+  if (eventsToggle && (current === 'future-events.html' || current === 'past-events.html')) {
+    eventsToggle.classList.add('active');
+  }
 
   // Toggle navigation on small screens
   const toggleButton = document.getElementById('menu-toggle');
