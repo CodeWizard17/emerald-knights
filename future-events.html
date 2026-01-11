@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Future Events | Emerald Knights</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <div class="header-content">
+    <div class="container header-content">
       <div class="logo-section">
         <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
         <div class="site-title">Emerald Knights</div>
@@ -19,7 +21,7 @@
         <a href="future-events.html" class="active">Future Events</a>
         <a href="past-events.html">Past Events</a>
         <a href="chess-literacy.html">Chess Literacy</a>
-        <a href="about-me.html">About Me</a>
+        <a href="about-me.html">About Us</a>
       </nav>
     </div>
   </header>
@@ -31,22 +33,28 @@
     </div>
   </section>
 
-  <main>
+  <main class="container">
     <section>
-      <h2 class="section-title">Future Events</h2>
+      <h2 class="section-title">Schedule</h2>
       <ul>
-        <li style="list-style: none; margin-bottom: 2rem;">
-          <div class="content-card">
-            <h3 style="margin-bottom: 1rem; color: #2d5a4d;">Emerald Knights Chess Literacy Workshop</h3>
-            <p style="margin-bottom: 1rem;">
-              <span style="color: #2d5a4d; font-size: 1.1rem;">📅 Saturday, February 22</span><br>
-              <span style="color: #2d5a4d; font-size: 1.1rem;">🕐 2:30 PM – 4:00 PM</span><br>
-              <span style="color: #2d5a4d; font-size: 1.1rem;">📍 Dublin Library - Virginia Bennett Room</span>
-            </p>
-            <img src="/images/library_workshop.jpg" alt="Dublin Library chess literacy workshop" style="width: 100%; max-width: 520px; height: auto; border-radius: 12px; display: block; margin-bottom: 1rem;">
-            <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.7; color: #2d5a4d;">
-              Join us for a welcoming chess literacy workshop with engaging lessons, friendly matches, and plenty of strategy tips for players of all ages.
-            </p>
+        <li>
+          <div class="grid-2" style="align-items: start; gap: 2rem;">
+            <div>
+              <h3>Emerald Knights Chess Literacy Workshop</h3>
+              <p style="margin-bottom: 1rem;">
+                <span style="color: var(--primary-dark); font-weight: 500;">📅 Saturday, February 22</span><br>
+                <span style="color: var(--text-muted);">🕐 2:30 PM – 4:00 PM</span><br>
+                <span style="color: var(--text-muted);">📍 Dublin Library - Virginia Bennett Room</span>
+              </p>
+              <p>
+                Join us for a welcoming chess literacy workshop with engaging lessons, friendly matches, and plenty of
+                strategy tips for players of all ages.
+              </p>
+              <button class="btn" onclick="window.location.href='mailto:emeraldknightschess@gmail.com'">More
+                Info</button>
+            </div>
+            <img src="/images/library_workshop.jpg" alt="Dublin Library chess literacy workshop"
+              style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
           </div>
         </li>
         <!-- Add more events here as needed -->
@@ -55,10 +63,12 @@
   </main>
 
   <footer>
-    &copy; 2025 Emerald Knights Chess Club | <a href="mailto:emeraldknightschess@gmail.com">Contact Us</a>
+    <div class="container footer-content">
+      <p>&copy; 2025 Emerald Knights Chess Club | <a href="mailto:emeraldknightschess@gmail.com">Contact Us</a></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
-</html>
 
+</html>
