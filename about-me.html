@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <div class="header-content">
+    <div class="container header-content">
       <div class="logo-section">
         <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
         <div class="site-title">Emerald Knights</div>
@@ -26,41 +26,46 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero" style="min-height: 40vh;">
     <div class="hero-content">
-      <h1>About Me</h1>
-      <p>Meet the founder behind Emerald Knights Chess Club.</p>
+      <h1>About The Team</h1>
+      <p>Meet the passionate individuals driving the Emerald Knights mission.</p>
     </div>
   </section>
 
-  <main>
+  <main class="container">
     <section>
       <h2 class="section-title">About the Founder</h2>
-      <div class="founder-section">
-        <img src="/images/IMG_0865.jpg" alt="Advay Bansal" class="founder-photo">
-        <div class="founder-info">
+      <div class="feature-section">
+        <div class="feature-image">
+          <img src="/images/IMG_0865.jpg" alt="Advay Bansal">
+        </div>
+        <div class="feature-content">
           <h3>Advay Bansal</h3>
           <p>
             Advay Bansal is a FIDE Master with a peak Elo of 2393 and a former World Rank #4 in his international age
             category. With multiple victories at state and national tournaments, he has established himself as one of
-            the strongest young players in the country. Advay's vision and competitive experience continue to drive our
-            mission forward, inspiring players to challenge themselves and achieve success at every stage of their chess
-            journey.
+            the strongest young players in the country.
           </p>
-          <div class="achievements">
-            <span class="achievement-badge">FIDE Master</span>
-            <span class="achievement-badge">Peak Elo: 2393</span>
-            <span class="achievement-badge">World Rank #4</span>
+          <p>
+            Advay's vision and competitive experience continue to drive our mission forward, inspiring players to
+            challenge themselves and achieve success at every stage of their chess journey.
+          </p>
+          <div class="badge-group">
+            <span class="badge">FIDE Master</span>
+            <span class="badge">Peak Elo: 2393</span>
+            <span class="badge">World Rank #4</span>
           </div>
         </div>
       </div>
     </section>
+
     <section>
       <h2 class="section-title">Volunteers</h2>
-      <p>
+      <p style="max-width: 800px; color: var(--text-muted);">
         Our volunteers help run events, welcome new players, and keep the club a friendly place to learn and grow.
       </p>
-      <div class="volunteers-grid">
+      <div class="grid-2">
         <div class="volunteer-card">
           <img src="/images/shivish.png" alt="Shivish Aneja" class="volunteer-photo">
           <h3>Shivish Aneja</h3>
@@ -85,7 +90,9 @@
   </main>
 
   <footer>
-    &copy; 2025 Emerald Knights Chess Club | <a href="mailto:emeraldknightschess@gmail.com">Contact Us</a>
+    <div class="container footer-content">
+      <p>&copy; 2025 Emerald Knights Chess Club | <a href="mailto:emeraldknightschess@gmail.com">Contact Us</a></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
