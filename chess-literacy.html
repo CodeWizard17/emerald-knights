@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chess Literacy | Emerald Knights</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <div class="header-content">
+    <div class="container header-content">
       <div class="logo-section">
         <img src="/images/emerald-knights-logo.png" alt="Emerald Knights Logo" class="logo">
         <div class="site-title">Emerald Knights</div>
@@ -19,7 +21,7 @@
         <a href="future-events.html">Future Events</a>
         <a href="past-events.html">Past Events</a>
         <a href="chess-literacy.html" class="active">Chess Literacy</a>
-        <a href="about-me.html">About Me</a>
+        <a href="about-me.html">About Us</a>
       </nav>
     </div>
   </header>
@@ -27,35 +29,39 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Chess Literacy</h1>
-      <p>Programs and events to grow your chess skills</p>
+      <p>Programs and events to grow your chess skills.</p>
     </div>
   </section>
 
-  <main>
+  <main class="container">
     <section>
       <h2 class="section-title">Emerald Knights Chess Literacy Workshop</h2>
       <div class="content-card">
-        <p style="margin-bottom: 1rem;">
-          <span style="color: #2d5a4d; font-size: 1.1rem;">📅 Sunday, October 19, 2025</span><br>
-          <span style="color: #2d5a4d; font-size: 1.1rem;">🕐 2:00 PM – 3:30 PM</span><br>
-          <span style="color: #2d5a4d; font-size: 1.1rem;">📍 Dublin Library - Virginia Bennett Room</span>
-        </p>
-
-        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; color: #2d5a4d;">
-          Thank you to everyone who joined us for a wonderful afternoon of chess learning and community fun. The workshop wrapped up with new friendships, stronger strategic skills, and plenty of smiles around the boards.
-        </p>
-
-        <div style="background: #f8fdf9; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-          <p style="color: #2d5a4d; font-size: 1rem; line-height: 1.7;">
-            <strong style="color: #10b981;">Workshop recap:</strong> Players of all ages explored key concepts, practiced friendly matches, and built confidence in a welcoming environment.
+        <div style="margin-bottom: 2rem;">
+          <p class="text-muted">
+            <strong>📅 Sunday, October 19, 2025</strong><br>
+            🕐 2:00 PM – 3:30 PM<br>
+            📍 Dublin Library - Virginia Bennett Room
+          </p>
+          <p>
+            Thank you to everyone who joined us for a wonderful afternoon of chess learning and community fun. The
+            workshop wrapped up with new friendships, stronger strategic skills, and plenty of smiles around the boards.
           </p>
         </div>
 
-        <div style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 2rem 0;">
-          <img src="images/library1.jpeg" alt="Chess literacy workshop participants playing games" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);">
-          <img src="images/library2.jpeg" alt="Coach guiding students during the chess literacy workshop" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);">
-          <img src="images/library3.jpeg" alt="Group of attendees learning chess strategies at the library" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);">
-          <img src="images/library4.jpeg" alt="Participants smiling after the chess literacy workshop" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);">
+        <div
+          style="background: var(--accent-color); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+          <p>
+            <strong style="color: var(--primary-dark);">Workshop recap:</strong> Players of all ages explored key
+            concepts, practiced friendly matches, and built confidence in a welcoming environment.
+          </p>
+        </div>
+
+        <div class="photo-grid">
+          <img src="images/library1.jpeg" alt="Chess literacy workshop participants">
+          <img src="images/library2.jpeg" alt="Coach guiding students">
+          <img src="images/library3.jpeg" alt="Group of attendees learning chess">
+          <img src="images/library4.jpeg" alt="Participants smiling">
         </div>
       </div>
     </section>
@@ -63,43 +69,48 @@
     <section>
       <h2 class="section-title">Summer Chess Camp - July 2025</h2>
       <div class="content-card">
-        <p style="margin-bottom: 2rem; font-size: 1.15rem; line-height: 1.8;">
-          Hello everyone! The Emerald Knights Chess Club is hosting a summer camp this July. We're excited to offer an immersive chess learning experience for players of all levels. Check out the flyer below for all the details about schedule, pricing, and what to expect.
+        <p>
+          Hello everyone! The Emerald Knights Chess Club is hosting a summer camp this July. We're excited to offer an
+          immersive chess learning experience for players of all levels. Check out the flyer below for all the details
+          about schedule, pricing, and what to expect.
         </p>
-        
-        <div style="text-align: center; margin: 2.5rem 0;">
-          <a href="Chess_Camp_July25.pdf" target="_blank" class="btn" style="font-size: 1.1rem; padding: 1rem 2rem; margin-right: 1rem; display: inline-block; margin-bottom: 1rem;">
+
+        <div style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="Chess_Camp_July25.pdf" target="_blank" class="btn" style="background: var(--primary-dark);">
             📄 View Camp Flyer (PDF)
           </a>
-          <a href="https://docs.google.com/forms/d/1DjCRp1xVRruCMjBUdLM0vGK8yiJ5F_urjt_mZDiQr9g/edit" target="_blank" class="cta-button" style="display: inline-block; margin-bottom: 1rem;">
+          <a href="https://docs.google.com/forms/d/1DjCRp1xVRruCMjBUdLM0vGK8yiJ5F_urjt_mZDiQr9g/edit" target="_blank"
+            class="cta-button">
             ✓ Sign Up Now
           </a>
         </div>
 
-        <div style="background: #f8fdf9; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 2rem; margin-top: 2rem;">
-          <h3 style="color: #10b981; margin-bottom: 1rem; font-size: 1.4rem;">What to Expect</h3>
-          <ul style="list-style: disc; padding-left: 2rem; color: #2d5a4d;">
-            <li style="margin-bottom: 0.8rem;">Expert instruction from experienced chess players</li>
-            <li style="margin-bottom: 0.8rem;">Interactive lessons and training sessions</li>
-            <li style="margin-bottom: 0.8rem;">Practice games and tournament preparation</li>
-            <li style="margin-bottom: 0.8rem;">Fun activities and chess puzzles</li>
-            <li style="margin-bottom: 0.8rem;">Build skills and make new friends</li>
+        <div style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-md); margin-top: 2rem;">
+          <h3 style="margin-bottom: 1rem;">What to Expect</h3>
+          <ul style="grid-template-columns: 1fr; gap: 0.5rem; list-style-type: disc; padding-left: 1.5rem;">
+            <li>Expert instruction from experienced chess players</li>
+            <li>Interactive lessons and training sessions</li>
+            <li>Practice games and tournament preparation</li>
+            <li>Fun activities and chess puzzles</li>
+            <li>Build skills and make new friends</li>
           </ul>
         </div>
 
-        <p style="margin-top: 2rem; text-align: center; color: #2d5a4d; font-size: 1.05rem;">
-          Have questions? <a href="mailto:emeraldknightschess@gmail.com" style="color: #10b981; font-weight: 600;">Contact us</a> for more information!
+        <p style="margin-top: 2rem; text-align: center;">
+          Have questions? <a href="mailto:emeraldknightschess@gmail.com"
+            style="color: var(--primary-color); font-weight: 600;">Contact us</a> for more information!
         </p>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Emerald Knights Chess Club | <a href="mailto:emeraldknightschess@gmail.com">Contact Us</a>
+    <div class="container footer-content">
+      <p>&copy; 2025 Emerald Knights Chess Club | <a href="mailto:emeraldknightschess@gmail.com">Contact Us</a></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
-
-
